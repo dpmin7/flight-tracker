@@ -3,7 +3,7 @@ Description=Dump1090 ADS-B Decoder
 After=network.target
 
 [Service]
-ExecStart=/home/lg/dump1090 --net --interactive
+ExecStart=/home/lg/dump1090/dump1090 --net --interactive
 Restart=always
 RestartSec=3
 StartLimitIntervalSec=0
