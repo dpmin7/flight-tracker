@@ -1,0 +1,17 @@
+[Unit]
+Description=Dump1090 ADS-B Decoder
+After=network.target
+
+[Service]
+ExecStart=/home/lg/dump1090 --net --interactive
+Restart=always
+RestartSec=3
+StartLimitIntervalSec=0
+User=lg
+WorkingDirectory=/home/lg
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

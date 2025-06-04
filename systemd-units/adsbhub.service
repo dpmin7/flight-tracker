@@ -1,0 +1,16 @@
+[Unit]
+Description=ADSBHub Feeder Script
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/adsbhub.sh
+Restart=always
+RestartSec=3
+StartLimitInterval=0
+User=lg
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
