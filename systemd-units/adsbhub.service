@@ -1,6 +1,8 @@
 [Unit]
 Description=ADSBHub Feeder Script
-After=network.target
+After=network.target dump1090
+Requires=dump1090
+BindsTo=dump1090
 
 [Service]
 ExecStart=/usr/bin/adsbhub.sh
