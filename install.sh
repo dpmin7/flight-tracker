@@ -12,8 +12,10 @@ cp ./systemd-units/*.service /lib/systemd/system/
 
 systemctl enable dump1090.service
 systemctl enable adsbhub.service
+systemctl enable sdrmonitor.service
 
 systemctl daemon-reload
 
+systemctl start sdrmonitor.service
 systemctl start dump1090.service
 systemctl start adsbhub.service

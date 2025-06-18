@@ -1,0 +1,17 @@
+[Unit]
+Description=SDR Monitor
+StartLimitIntervalSec=0
+StartLimitBurst=0
+
+[Service]
+ExecStart=/usr/bin/sdrmonitor.sh
+Restart=always
+RestartSec=3
+User=lg
+WorkingDirectory=/home/lg
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
