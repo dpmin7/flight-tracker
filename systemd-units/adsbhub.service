@@ -5,6 +5,7 @@ Requires=dump1090
 BindsTo=dump1090
 
 [Service]
+ExecStartPre=/bin/bash -c 'systemctl is-active -q dump1090.service || exit 1'
 ExecStart=/usr/bin/adsbhub.sh
 Restart=always
 RestartSec=3
