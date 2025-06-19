@@ -2,9 +2,9 @@
 Description=ADSBHub Feeder Script
 StartLimitInterval=0
 StartLimitBurst=0
-After=network.target dump1090
-Requires=dump1090
-BindsTo=dump1090
+After=network.target dump1090.service
+Requires=dump1090.service
+BindsTo=dump1090.service
 
 [Service]
 ExecStartPre=/bin/bash -c 'systemctl is-active -q dump1090.service || exit 1'
