@@ -7,6 +7,9 @@ while true; do
             killall -9 dump1090
             sleep 1
             killall -9 adsbhub.sh
+        elif ! nc -z -w 1 data.adsbhub.org 5001; then
+            echo "[!] Can't open data.adsbhub.org:5001. Killing adsbhub.sh..."
+            killall -9 adsbhub.sh
         fi
     fi
     sleep 3
